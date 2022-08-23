@@ -40,12 +40,33 @@ export default function App() {
                 <Stack.Screen name="Home" options={{
                     title: "Pagina principal",
                     headerShown: false,
-                    headerStyle:{
-                        backgroundColor:'orange'
+                    headerStyle: {
+                        backgroundColor: 'orange'
                     },
-                    headerTintColor:"red",
+                    headerTintColor: "red",
                 }} component={HomeScreen} />
-                <Stack.Screen name="Detail" component={DetailsScreen} />
+                <Stack.Screen name="Detail"
+                    options={{
+                        headerTitle: () => (
+                            <Button title="Button" onPress={() => {
+                                navigation.navigate('Detail', {
+                                    name: 'Alan',
+                                    valor: 10,
+                                    msg: 'Esse dado veio de outra pagina'
+                                })
+                            }} />
+                        ),
+                        headerRight: () => (
+                            <Button title="Button" onPress={() => {
+                                navigation.navigate('Detail', {
+                                    name: 'Alan',
+                                    valor: 10,
+                                    msg: 'Esse dado veio de outra pagina'
+                                })
+                            }} />
+                        )
+                    }}
+                    component={DetailsScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     )

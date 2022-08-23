@@ -5,9 +5,11 @@ import List from './src/pages/flatList'
 import Hooks from './src/pages/hooks'
 import Count from './src/pages/count'
 import Routes from './src/routes'
+import Bottom from './src/pages/bottomNavigation'
+import Drawer from './src/pages/drawerNavigation'
 
 export default function App() {
-  return  <Routes/>  
+  return  <Drawer />  
 }
 
 
