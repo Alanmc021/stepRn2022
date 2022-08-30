@@ -7,10 +7,11 @@ import Count from './src/pages/count'
 import Routes from './src/routes'
 import Bottom from './src/pages/bottomNavigation'
 import Auth from './src/pages/AuthenticationFlows'
+import AulaFirebase from "./src/pages/firebase"
 // import Drawer from './src/pages/drawerNavigation'
 
 export default function App() {
-  return  <Auth/>  
+  return  <AulaFirebase />  
 }
 
 
