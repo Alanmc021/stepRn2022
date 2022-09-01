@@ -9,10 +9,11 @@ import Bottom from './src/pages/bottomNavigation'
 import Auth from './src/pages/AuthenticationFlows'
 import AulaFirebase from "./src/pages/firebase"
 import RealTimeDataBase from "./src/pages/realTimeDataBase";
+import ImagePiker from "./src/pages/ImagePicker"
 // import Drawer from './src/pages/drawerNavigation'
 
 export default function App() {
-  return  <RealTimeDataBase />  
+  return  <ImagePiker />  
 }
 
 
