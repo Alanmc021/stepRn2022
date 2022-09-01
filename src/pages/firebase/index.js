@@ -10,7 +10,6 @@ export default function App() {
     // const { signIn } = React.useContext(AuthContext)
 
     function login(username, password) {
-
         firebase.auth().signInWithEmailAndPassword(username, password)
             .then((userCredential) => {
                 // Signed in
@@ -25,12 +24,28 @@ export default function App() {
             });
     }
 
-    function logout(){
+    function logout() {
         firebase.auth().signOut().then(() => {
             // Sign-out successful.
-          }).catch((error) => {
+        }).catch((error) => {
             // An error happened.
-          });
+        });
+    }
+
+    function createUser() {
+        firebase.auth().createUserWithEmailAndPassword("alan@alam.com", "123456")
+            .then((userCredential) => {
+                // Signed in
+                var user = userCredential.user;
+                console.log(user);
+                // ...
+            })
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log(error);
+                // ..
+            });
     }
 
     return (
@@ -48,6 +63,7 @@ export default function App() {
             />
             <Button title="Logar" onPress={() => { login(username, password) }} />
             <Button title="deslogar" onPress={() => { logout() }} />
+            <Button title="criar user" onPress={() => { createUser() }} />
         </View>
     )
 }
